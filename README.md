@@ -16,7 +16,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 -Open up the .py file (do not run this with Windows CMD).
 
--Enter the book ID (instructions for how to get it are lower down this readme. Press enter.
+-Enter the book ID (instructions for how to get it are lower down this readme). Press enter.
 
 -Enter how many pages the book is. You should be able to find out by going onto the last page of the book on the Pearson site. Press enter.
 
