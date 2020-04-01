@@ -13,7 +13,7 @@ A Pearson book downloader.
 
 The link should look something like this:
 
-https://d38l3k3yaet8r2.cloudfront.net/resources/products/epubs/generated/<id>/foxit-assets/manifest?password=&isCheckPsd=false&form=true
+https://d38l3k3yaet8r2.cloudfront.net/resources/products/epubs/generated/id/foxit-assets/manifest?password=&isCheckPsd=false&form=true
   
 -Now copy the id between '/generated' and '/foxit-assets'. You can now use this ID in PearsonDL!
 
