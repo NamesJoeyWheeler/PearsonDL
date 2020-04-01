@@ -1,6 +1,8 @@
 # PearsonDL
 A Pearson book downloader.
 
+# NOTE: Only use this for books you LEGALLY own. We are not responsible for any pirating done with this tool.
+
 # How to get book ID:
 
 -Login to the Pearson website.
