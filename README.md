@@ -4,7 +4,7 @@ A Python script that downloads books  from the Pearson website in image format.
 
 # Disclaimer
 
-Only use this for books you LEGALLY own. We do not condone, promote or tolerate the use of our software for illegal purposes.
+Only use this for books you LEGALLY own. We do not condone, promote or tolerate the use of this script for illegal purposes.
 
 # What is needed:
 
