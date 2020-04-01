@@ -1,5 +1,6 @@
 # PearsonDL
-A Pearson book downloader.
+
+A Python script that downloads a book from the Pearson website in image format.
 
 # NOTE: Only use this for books you LEGALLY own. We are not responsible for any pirating done with this tool.
 
