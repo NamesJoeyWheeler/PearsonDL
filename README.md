@@ -18,7 +18,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 -Enter the book ID (instructions for how to get it are lower down this readme). Press enter.
 
--Enter how many pages the book is. You should be able to find out by going onto the last page of the book on the Pearson site. Press enter.
+-Enter how many pages the book is. You should be able to find out by going onto the last page of the book on the Pearson site (or viewing the manifest link). Press enter.
 
 -It will now download the pages into a folder named after the ID which is in the Pearson Books folder. It will close once completed.
 
