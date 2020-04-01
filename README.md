@@ -8,9 +8,9 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 # What is needed:
 
--Python (Only 3.6 has been tested, but I assume this works with other versions).
+-Python (only 3.6 has been tested, but I assume this works with other versions).
 
--Windows 10 (Unknown if working on other OS).
+-Windows 10 (unknown if working on other OS).
 
 # How to use:
 
