@@ -8,13 +8,14 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 # What is needed:
 
-- Python 3.x (tested with 3.6 and 3.7)
+- Python 3.x (tested with `3.6` and `3.7`)
 
 # How to use:
 
 - Linux/Mac:
   - Open a new terminal
   - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
+  - `cd` into the repo folder (`cd PearsonDL`)
   - Run the downloader as so:
     - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
     - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
@@ -22,6 +23,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 - Windows:
   - Open a new CMD or PowerShell window
   - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
+  - `cd` into the repo folder (`cd PearsonDL`)
   - Run the downloader as so:
     - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
     - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
