@@ -1,6 +1,6 @@
 # PearsonDL
 
-A Python script that downloads books from the Pearson website in image format.
+A Python script that downloads books from the Pearson website in (multiple) PNG files and/or a single PDF file.
 
 # Disclaimer
 
@@ -9,6 +9,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 # What is needed:
 
 - Python 3.x (tested with `3.6` and `3.7`)
+- Pillow (if PDF generation is desired)
 
 # How to use:
 
@@ -16,25 +17,37 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
   - Open a new terminal
   - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
   - `cd` into the repo folder (`cd PearsonDL`)
-  - Run the downloader as so:
-    - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
-    - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
+  - To only download PNG images:
+    - Run the downloader as so:
+      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>` or
+      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages>`
+  - To generate a PDF file as well:
+    - Install the required packages:
+      - `pip3 install -r requirements.txt`
+    - Run the downloader with the `-g` flag:
+      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages> -g`
+      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages> --generate_pdf`
 
 - Windows:
   - Open a new CMD or PowerShell window
   - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
   - `cd` into the repo folder (`cd PearsonDL`)
-  - Run the downloader as so:
-    - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
-    - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
+  - To only download PNG images:
+    - Run the downloader as so:
+      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>` or
+      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages>`
+  - To generate a PDF file as well:
+    - Install the required packages:
+      - `pip3 install -r requirements.txt`
+    - Run the downloader with the `-g` flag:
+      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages> -g`
+      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages> --generate_pdf`
 
+- You should be able to find out how many pages the book has by going onto the last page of the book on the Pearson site (or viewing the manifest link).
 
-- Enter the book ID (instructions for how to get it are lower down this readme). Press enter.
+- It will now download the pages into a folder named after the ID which is in the `Pearson Books` folder.
 
-- Enter how many pages the book contains.
-  - You should be able to find out by going onto the last page of the book on the Pearson site (or viewing the manifest link). Press enter.
-
-- It will now download the pages into a folder named after the ID which is in the `Pearson Books` folder. It will close once completed.
+- If the `-g` flag was passed, the program will now generate a PDF of all the downloaded pages, titled `<id>.pdf`
 
 
 
@@ -42,11 +55,11 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 - Login to the Pearson website.
 
-- Open up developer tools and go onto network.
+- Open up developer tools and go to the `network` tab.
 
 - Open the book on Pearson.
 
-- Now keep an eye out in developer tools (on the network tab) for something starting with 'manifest?password'. Copy that link.
+- Now keep an eye out in developer tools for something starting with 'manifest?password'. Copy that link.
 
   - The link should look something like this:
 
