@@ -1,6 +1,6 @@
 # PearsonDL
 
-A Python script that downloads books  from the Pearson website in image format.
+A Python script that downloads books from the Pearson website in image format.
 
 # Disclaimer
 
@@ -8,35 +8,47 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 # What is needed:
 
--Python (only 3.6 has been tested, but I assume this works with other versions).
-
--Windows 10 (unknown if working on other OS).
+- Python 3.x (tested with 3.6 and 3.7)
 
 # How to use:
 
--Open up the .py file (do not run this with Windows CMD).
+- Linux/Mac:
+  - Open a new terminal
+  - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
+  - Run the downloader as so:
+    - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
+    - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
 
--Enter the book ID (instructions for how to get it are lower down this readme). Press enter.
+- Windows:
+  - Open a new CMD or PowerShell window
+  - Clone this repo (`git clone https://github.com/NamesJoeyWheeler/PearsonDL.git`)
+  - Run the downloader as so:
+    - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages>`
+    - `./PearsonDL.py -i <ID> -p <Number_Of_Pages>`
 
--Enter how many pages the book is. You should be able to find out by going onto the last page of the book on the Pearson site (or viewing the manifest link). Press enter.
 
--It will now download the pages into a folder named after the ID which is in the Pearson Books folder. It will close once completed.
+- Enter the book ID (instructions for how to get it are lower down this readme). Press enter.
+
+- Enter how many pages the book contains.
+  - You should be able to find out by going onto the last page of the book on the Pearson site (or viewing the manifest link). Press enter.
+
+- It will now download the pages into a folder named after the ID which is in the `Pearson Books` folder. It will close once completed.
 
 
 
 # How to get book ID:
 
--Login to the Pearson website.
+- Login to the Pearson website.
 
--Open up developer tools and go onto network.
+- Open up developer tools and go onto network.
 
--Open the book on Pearson.
+- Open the book on Pearson.
 
--Now keep an eye out in developer tools for something starting with 'manifest?password'. Copy that link.
+- Now keep an eye out in developer tools (on the network tab) for something starting with 'manifest?password'. Copy that link.
 
-The link should look something like this:
+  - The link should look something like this:
 
-https://d38l3k3yaet8r2.cloudfront.net/resources/products/epubs/generated/id/foxit-assets/manifest?password=&isCheckPsd=false&form=true
+  - `https://d38l3k3yaet8r2.cloudfront.net/resources/products/epubs/generated/<id>/foxit-assets/manifest?password=&isCheckPsd=false&form=true`
   
--Now copy the id between '/generated' and '/foxit-assets'. You can now use this ID in PearsonDL!
+- Now copy the id between '/generated/' and '/foxit-assets'. You can now use this ID in PearsonDL!
 
