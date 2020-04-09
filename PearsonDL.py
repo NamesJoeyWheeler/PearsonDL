@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 from time import time
 from uuid import UUID
 from multiprocessing import Process, Pool, cpu_count
-from os import path, makedirs
+from os import path, makedirs, sep
 from sys import exit
 from glob import glob
 
@@ -34,9 +34,9 @@ def main():
     _id = args.id
     pages = args.pages
 
-    if not path.isdir(f'Pearson Books/{_id}'):
+    if not path.isdir(path.join('Pearson Books', _id)):
         directory = _id
-        parent_dir = 'Pearson Books/'
+        parent_dir = 'Pearson Books'
         _path = path.join(parent_dir, directory)
         makedirs(_path)
     # End if
@@ -61,7 +61,7 @@ def main():
 
         print('Generating a PDF! (This may take a while)')
         # Grab list of created image files and sort them numerically
-        image_list = sorted(glob(f'Pearson Books/{_id}/*.png'), key = lambda x: int(x.split("/")[2].split(".")[0]))
+        image_list = sorted(glob(path.join('Pearson Books', _id, "*.png")), key = lambda x: int(x.split(sep)[2].split(".")[0]))
 
         im0 = Image.open(f'{image_list[0]}').convert('RGB')
         converted_list = []
@@ -70,7 +70,7 @@ def main():
             converted_list.append(Image.open(f'{image_list[i]}').convert('RGB'))
         # End for
 
-        im0.save(f'Pearson Books/{_id}/{_id}.pdf', save_all=True, append_images=converted_list, optimize=True)
+        im0.save(path.join('Pearson Books', _id, f'{_id}.pdf'), save_all=True, append_images=converted_list, optimize=True)
         print("Generated a PDF!")
     # End if
 # End def
