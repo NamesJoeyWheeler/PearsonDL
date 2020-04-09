@@ -101,7 +101,7 @@ def is_valid_uuid(uuid_to_test, version=4):
         return False
     # End try/except block
 
-    return str(uuid_obj).upper() == uuid_to_test
+    return str(uuid_obj).upper() == uuid_to_test.upper()
 # End def
 
 def get_files(_id, page):
