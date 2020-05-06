@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 from time import time
 from uuid import UUID
 from multiprocessing import Process, Pool, cpu_count
-from os import path, makedirs, sep
+from os import path, makedirs, sep, remove
 from sys import exit
 from glob import glob
 
@@ -14,6 +14,8 @@ def main():
     parser.add_argument('-p', '--pages', type=int, help='The number of pages in this book.')
     parser.add_argument('-i', '--id', type=str, help='This book\'s ID.')
     parser.add_argument('-g', "--generate_pdf", action='store_true', help='Generate a PDF from the downloaded images.')
+    parser.add_argument('-r', "--remove_png", action='store_true', help='Remove the downloaded PNG files after PDF generation.')
+    parser.add_argument('-v', "--verbose", action='store_true', help='Show verbose output.')
     args = parser.parse_args()
 
     if not args.id:
@@ -41,15 +43,17 @@ def main():
         makedirs(_path)
     # End if
 
+    print("Downloading page images...")
     pool = Pool(cpu_count())
 
     # Create a process for each page
     for i in range(0, pages):
-        pool.apply_async(get_files, args=(_id, i,))
+        pool.apply_async(get_files, args=(_id, i, args.verbose,))
     # End for
 
     pool.close()
     pool.join()
+    print("Page downloads complete!")
 
     if args.generate_pdf:
         try:
@@ -59,7 +63,7 @@ def main():
             exit(1)
         # End try/except block
 
-        print('Generating a PDF! (This may take a while)')
+        print('Generating a PDF... (This may take a while)')
         # Grab list of created image files and sort them numerically
         image_list = sorted(glob(path.join('Pearson Books', _id, "*.png")), key = lambda x: int(x.split(sep)[2].split(".")[0]))
 
@@ -72,6 +76,14 @@ def main():
 
         im0.save(path.join('Pearson Books', _id, f'{_id}.pdf'), save_all=True, append_images=converted_list, optimize=True)
         print("Generated a PDF!")
+
+        if args.remove_png:
+            print("Cleaning up downloaded PNG files...")
+            for png in image_list:
+                remove(png)
+            # End for
+            print("PNG files removed!")
+        # End if
     # End if
 # End def
 
@@ -104,10 +116,13 @@ def is_valid_uuid(uuid_to_test, version=4):
     return str(uuid_obj).upper() == uuid_to_test.upper()
 # End def
 
-def get_files(_id, page):
+def get_files(_id, page, verbose=False):
     pb = f'https://d38l3k3yaet8r2.cloudfront.net/resources/products/epubs/generated/{_id}/foxit-assets/pages/page{page}?password=&accessToken=null&formMode=true'
     request.urlretrieve(pb, f'Pearson Books/{_id}/{page}.png')
-    print(f"Downloaded page {page+1}!")
+
+    if verbose: 
+        print(f"Downloaded page {page+1}!")
+    # End if
 # End def
 
 if __name__ == "__main__":
