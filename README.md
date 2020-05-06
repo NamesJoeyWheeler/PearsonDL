@@ -40,14 +40,16 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
     - Install the required packages:
       - `pip3 install -r requirements.txt`
     - Run the downloader with the `-g` flag:
-      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages> -g`
-      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages> --generate_pdf`
+      - `python3 PearsonDL.py -i <ID> -p <Number_Of_Pages> -g -r`
+      - `./PearsonDL.py --id <ID> --pages <Number_Of_Pages> --generate_pdf --remove_png`
 
 - You should be able to find out how many pages the book has by going onto the last page of the book on the Pearson site (or viewing the manifest link).
 
 - It will now download the pages into a folder named after the ID which is in the `Pearson Books` folder.
 
 - If the `-g` flag was passed, the program will now generate a PDF of all the downloaded pages, titled `<id>.pdf`
+
+- If the `-r` flag was passed, the program will now delete all the downloaded page images
 
 
 
