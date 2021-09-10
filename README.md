@@ -2,6 +2,8 @@
 
 A Python script that downloads books from the Pearson website in (multiple) PNG files and/or a single PDF file.
 
+# Update 10/09/2021 - This tool no longer works. A fix is being looked into.
+
 # Disclaimer
 
 Only use this for books you LEGALLY own. We do not condone, promote or tolerate the use of this script for illegal purposes.
