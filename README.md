@@ -87,7 +87,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
 - After you've found the 'Request Header', look for 'Cookie'. Once you found it, copy the value.
 
-![Picture showing where the cookie is](https://i.imgur.com/c74GyW8.jpg)
+![Picture showing where the cookie is](https://i.imgur.com/abVCZ0V.jpg)
 
 - Next, open up PearsonDL.py or PearsonDL_Classic.py (depends on what you want to use) in a text editor. Look for a line containing `opener.addheaders = [('Cookie', 'ADD COOKIE VALUE HERE')]`.
 
@@ -108,7 +108,7 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
   - `https://plus.pearson.com/eplayer/pdfassets/prod1/<product number>/<book id>/manifest?password=&isCheckPsd=false&form=true`
   
-![Picture showing where the link is](https://i.imgur.com/SazUx49.jpg)
+![Picture showing where the link is](https://i.imgur.com/lDS4ILA.jpeg)
 
 - Now copy the id between 'prod1/' and '/manifest'. You can now use this in PearsonDL!
 
@@ -127,6 +127,6 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 
   - `https://plus.pearson.com/eplayer/pdfassets/prod1/<product number>/<book id>/manifest?password=&isCheckPsd=false&form=true`
  
-![Picture showing where the link is](https://i.imgur.com/SazUx49.jpg)
+![Picture showing where the link is](https://i.imgur.com/lDS4ILA.jpeg)
  
 - Now copy the product number between 'prod1/' and before the book id, then copy the book id after the product number and before '/manifest'. You can now use this in PearsonDL Classic!
