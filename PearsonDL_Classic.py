@@ -15,7 +15,7 @@ path = os.path.join(parent_dir, directory)
 os.makedirs(path)
 for i in range(0, pages):
     opener = urllib.request.build_opener()
-    opener.addheaders = [('ADD COOKIE HERE!')]
+    opener.addheaders = [('Cookie', 'ADD COOKIE VALUE HERE')]
     urllib.request.install_opener(opener)
     pb = f'https://plus.pearson.com/eplayer/pdfassets/prod1/{num}/{id}/pages/page{i}?password=&accessToken=null&formMode=true'
     urllib.request.urlretrieve(pb, f'Pearson Books/{id}/{i}.png')
