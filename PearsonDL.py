@@ -88,7 +88,7 @@ def main():
 def get_files(_id, page, verbose=False):
     pb = f'https://plus.pearson.com/eplayer/pdfassets/prod1/{_id}/pages/page{page}?password=&accessToken=null&formMode=true'
     opener = request.build_opener()
-    opener.addheaders = [('ADD COOKIE HERE!')]
+    opener.addheaders = [('Cookie', 'ADD COOKIE VALUE HERE')]
     request.install_opener(opener)
     request.urlretrieve(pb, f'Pearson Books/{_id}/{page}.png')
 
