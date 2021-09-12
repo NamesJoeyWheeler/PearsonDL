@@ -11,6 +11,11 @@ Only use this for books you LEGALLY own. We do not condone, promote or tolerate 
 - Python 3.x (tested with `3.6`, `3.7` and `3.9`)
 - Pillow (if PDF generation is desired)
 
+# Compatibility List:
+- plus.pearson.com/product - Works on [v3](https://github.com/NamesJoeyWheeler/PearsonDL/releases/download/v3.0/PearsonDL_V3.zip).
+- plus.pearson.com/course - Not working on any version.
+- reader-sin-prod.gls.pearson-intl.com/bookshelf - Works on [v1](https://github.com/NamesJoeyWheeler/PearsonDL/releases/download/v1.0/PearsonDL-master.zip) & [v2](https://github.com/NamesJoeyWheeler/PearsonDL/releases/download/v2.0/PearsonDL-master.zip).
+
 # How to use:
 
 - Linux/Mac:
