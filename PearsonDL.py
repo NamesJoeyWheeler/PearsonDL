@@ -12,7 +12,9 @@ from glob import glob
 def main():
     parser = ArgumentParser()
     parser.add_argument('-p', '--pages', type=int, help='The number of pages in this book.')
-    parser.add_argument('-i', '--id', type=str, help='This book\'s product number and ID.')
+    parser.add_argument('-i', '--id', type=str, help='This book\'s ID.')
+    parser.add_argument('-n', '--num', type=str, help='This book\'s product number.')
+    #parser.add_argument('-c', '--cookie', type=str, help='Cookies from Pearson website (guide: https://github.com/NamesJoeyWheeler/PearsonDL/blob/master/README.md).')
     parser.add_argument('-g', "--generate_pdf", action='store_true', help='Generate a PDF from the downloaded images.')
     parser.add_argument('-r', "--remove_png", action='store_true', help='Remove the downloaded PNG files after PDF generation.')
     parser.add_argument('-v', "--verbose", action='store_true', help='Show verbose output.')
@@ -27,12 +29,13 @@ def main():
     # End if/else block
 
     print("PearsonDL")
-    print("Developed by NamesJoeyWheeler, FurryLovingMcNugget, and cdchris12")
+    print("Developed by NamesJoeyWheeler, FurryLovingMcNugget, and cdchris12. Fixed by sh4tteredd")
     print("---------------------------------------------------")
-
     _id = args.id
+    num = args.num
     pages = args.pages
-
+    print("That's how to find your cookies: https://github.com/NamesJoeyWheeler/PearsonDL/blob/master/README.md \n")
+    cookies = input("cookies: ")
     if not path.isdir(path.join('Pearson Books', _id)):
         directory = _id
         parent_dir = 'Pearson Books'
@@ -45,7 +48,7 @@ def main():
 
     # Create a process for each page
     for i in range(0, pages):
-        pool.apply_async(get_files, args=(_id, i, args.verbose,))
+        pool.apply_async(get_files, args=(_id, i,num,cookies,args.verbose,))
     # End for
 
     pool.close()
@@ -85,13 +88,12 @@ def main():
 # End def
 
 
-def get_files(_id, page, verbose=False):
-    pb = f'https://plus.pearson.com/eplayer/pdfassets/prod1/{_id}/pages/page{page}?password=&accessToken=null&formMode=true'
+def get_files(_id, page, num,cookies,verbose=False):
+    pb = f'https://plus.pearson.com/eplayer/pdfassets/prod1/{num}/{_id}/pages/page{page}?password=&accessToken=null&formMode=true'
     opener = request.build_opener()
-    opener.addheaders = [('Cookie', 'ADD COOKIE VALUE HERE')]
+    opener.addheaders = [('Cookie', cookies)]
     request.install_opener(opener)
     request.urlretrieve(pb, f'Pearson Books/{_id}/{page}.png')
-
     if verbose: 
         print(f"Downloaded page {page+1}!")
     # End if
